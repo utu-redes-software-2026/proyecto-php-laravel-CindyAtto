@@ -1,5 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+=======
+use App\Models\User;
+
+>>>>>>> 876dc731923b42cc6cbaf0bce8203daa7c98e5d8
 return [
 
     /*
@@ -62,7 +67,11 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
+<<<<<<< HEAD
             'model' => env('AUTH_MODEL', App\Models\User::class),
+=======
+            'model' => env('AUTH_MODEL', User::class),
+>>>>>>> 876dc731923b42cc6cbaf0bce8203daa7c98e5d8
         ],
 
         // 'users' => [
@@ -104,7 +113,11 @@ return [
     | Password Confirmation Timeout
     |--------------------------------------------------------------------------
     |
+<<<<<<< HEAD
     | Here you may define the amount of seconds before a password confirmation
+=======
+    | Here you may define the number of seconds before a password confirmation
+>>>>>>> 876dc731923b42cc6cbaf0bce8203daa7c98e5d8
     | window expires and users are asked to re-enter their password via the
     | confirmation screen. By default, the timeout lasts for three hours.
     |

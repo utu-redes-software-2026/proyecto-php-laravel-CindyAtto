@@ -1,10 +1,15 @@
 {
+<<<<<<< HEAD
+=======
+    "$schema": "https://getcomposer.org/schema.json",
+>>>>>>> 876dc731923b42cc6cbaf0bce8203daa7c98e5d8
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
+<<<<<<< HEAD
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9"
@@ -17,6 +22,19 @@
         "nunomaduro/collision": "^8.0",
         "phpunit/phpunit": "^10.5",
         "spatie/laravel-ignition": "^2.4"
+=======
+        "php": "^8.3",
+        "laravel/framework": "^13.0",
+        "laravel/tinker": "^3.0"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.23",
+        "laravel/pail": "^1.2.5",
+        "laravel/pint": "^1.27",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^12.5.12"
+>>>>>>> 876dc731923b42cc6cbaf0bce8203daa7c98e5d8
     },
     "autoload": {
         "psr-4": {
@@ -31,6 +49,25 @@
         }
     },
     "scripts": {
+<<<<<<< HEAD
+=======
+        "setup": [
+            "composer install",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "@php artisan migrate --force",
+            "npm install --ignore-scripts",
+            "npm run build"
+        ],
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+        ],
+        "test": [
+            "@php artisan config:clear --ansi",
+            "@php artisan test"
+        ],
+>>>>>>> 876dc731923b42cc6cbaf0bce8203daa7c98e5d8
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -44,6 +81,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+<<<<<<< HEAD
             "@php artisan migrate --ansi"
         ]
     },
@@ -51,6 +89,15 @@
         "branch-alias": {
             "dev-master": "11.x-dev"
         },
+=======
+            "@php artisan migrate --graceful --ansi"
+        ],
+        "pre-package-uninstall": [
+            "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        ]
+    },
+    "extra": {
+>>>>>>> 876dc731923b42cc6cbaf0bce8203daa7c98e5d8
         "laravel": {
             "dont-discover": []
         }

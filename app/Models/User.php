@@ -3,10 +3,17 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+<<<<<<< HEAD
+=======
+use Database\Factories\UserFactory;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Hidden;
+>>>>>>> 876dc731923b42cc6cbaf0bce8203daa7c98e5d8
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+<<<<<<< HEAD
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -33,6 +40,16 @@ class User extends Authenticatable
     ];
 
     /**
+=======
+#[Fillable(['name', 'email', 'password'])]
+#[Hidden(['password', 'remember_token'])]
+class User extends Authenticatable
+{
+    /** @use HasFactory<UserFactory> */
+    use HasFactory, Notifiable;
+
+    /**
+>>>>>>> 876dc731923b42cc6cbaf0bce8203daa7c98e5d8
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
